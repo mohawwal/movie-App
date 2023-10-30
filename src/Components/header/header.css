@@ -1,0 +1,97 @@
+header {
+  height: 10vh;
+  width: 100%;
+  line-height: 10vh;
+  background-image: linear-gradient(
+    to right bottom,
+    rgb(0, 0, 0, 0.9),
+    rgb(0, 0, 0, 0.8),
+    rgb(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.1)
+  );
+  background-color: none;
+  color: whitesmoke;
+  position: relative;
+  z-index: 999;
+  margin-bottom: 95vh;
+}
+
+.logo img {
+  width: 30px;
+  margin-top: 15px;
+  margin-right: 20px;
+}
+
+header a {
+  color: whitesmoke;
+  margin-left: 1rem;
+}
+
+header .icons-header .header-icons {
+  quotes: 40px;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  border-radius: 50%;
+  padding: 9px;
+  border: 2px solid white;
+  margin: 0 5px;
+  color: white;
+  font-weight: 700;
+}
+
+header button {
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.toggle {
+  display: none;
+}
+
+.icons-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.subscribe-btn {
+  font-size: 17px;
+  padding: 8px 15px;
+  font-weight: 600;
+  margin-left: 10px;
+}
+
+@media only screen and (max-width: 842px) {
+  nav .flexSB,
+  .account {
+    display: none;
+  }
+
+  .toggle {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 15px;
+    cursor: pointer;
+    background-color: none;
+  }
+
+  .navMenu-list {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    align-items: center;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 80%;
+    background-color: red;
+    z-index: 999;
+    padding: 20px;
+  }
+}
