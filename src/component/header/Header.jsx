@@ -1,27 +1,32 @@
 import "./Header.css";
 import { Link } from "react-router-dom";
 import { RxHamburgerMenu } from "react-icons/rx";
+import { GiHamburger } from "react-icons/gi";
 import { useState } from "react";
 
 export default function Header() {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
 
-  function menuOption() {
-    setShow(!show);
-    console.log("seen");
+  function toggle() {
+    setShow(true);
   }
+
   return (
     <>
-      <div onClick={menuOption}>
-        <RxHamburgerMenu />
-      </div>
       <div className="header flex">
         <div className="headerLeft flex">
-          <Link to="/">
-            <img src="/Images/Tape.gif" className="header_icon flex" alt="" />
+          <Link to="/" className="headerBurger" onClick={toggle}>
+            <RxHamburgerMenu className="icon" />
           </Link>
+
           {show && (
-            <div className="headerLeft flex">
+            <div className="headerNav flex">
+              <div onClick={() => setShow(false)}>
+                <GiHamburger className="icon" />
+              </div>
+              <Link to="/" className="header-category">
+                <span>Home</span>
+              </Link>
               <Link to="/movies/popular" className="header-category">
                 <span>Popular</span>
               </Link>

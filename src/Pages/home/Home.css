@@ -1,0 +1,104 @@
+.control-dots {
+  opacity: 10%;
+}
+
+.movieDetails {
+  width: 100%;
+  height: 50vh;
+}
+
+.posterImg {
+  position: relative;
+  z-index: 10;
+  height: 55vh;
+  background-color: rgb(70, 0, 0);
+}
+
+.movieDetails::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  z-index: 20;
+  height: 100%;
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.posterImg img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.posterImage__overlay {
+  margin-top: 30%;
+  max-width: 90%;
+  position: absolute;
+  z-index: 30;
+  top: 0;
+  left: 0;
+  padding: 10%;
+  color: white;
+  text-align: left;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.poster__title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  background-image: url(/Images/bgImg.jpg);
+  background-repeat: repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.vote_average {
+  width: 40px;
+  height: 40px;
+  background-color: red;
+  opacity: 70%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.vote_average span {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+}
+
+.posterImage__runtime {
+  width: 60%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.playMovie {
+  margin: 8% 0;
+}
+
+.playMovie {
+  background-color: brown;
+  padding: 5%;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  border-radius: 10px;
+}

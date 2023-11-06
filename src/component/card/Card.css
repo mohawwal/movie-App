@@ -1,3 +1,11 @@
-img {
-  width: 40%;
+/* Card.css */
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+}
+
+.slick-slide {
+  float: left;
+  min-height: 1px;
 }

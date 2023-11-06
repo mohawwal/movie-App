@@ -55,18 +55,28 @@ export default function Movie() {
   return (
     <>
       {currentMovieDetail ? (
-        <div>
-          <img
-            src={`https://image.tmdb.org/t/p/original${currentMovieDetail.poster_path}`}
-            alt="img"
-          />
-          <h2>{currentMovieDetail.original_title}</h2>
-          <p>{currentMovieDetail.overview}</p>
-          <p>Release Date: {currentMovieDetail.release_date}</p>
-          <span>
-            <h4>Genre</h4>
-          </span>
-          <p>Rating: {currentMovieDetail.vote_average}</p>
+        <div className="movie">
+          <div className="coverImg">
+            <img
+              src={`https://image.tmdb.org/t/p/original${currentMovieDetail.backdrop_path}`}
+              alt="img"
+            />
+          </div>
+          <div className="moviePic">
+            <img
+              src={`https://image.tmdb.org/t/p/original${currentMovieDetail.poster_path}`}
+              alt="img"
+            />
+          </div>
+          <div className="movieText">
+            <h2>{currentMovieDetail.original_title}</h2>
+            <p>{currentMovieDetail.overview}</p>
+            <p>Release Date: {currentMovieDetail.release_date}</p>
+            <span>
+              <h4>Genre</h4>
+            </span>
+            <p>Rating: {currentMovieDetail.vote_average}</p>
+          </div>
         </div>
       ) : (
         <p>Loading...</p>

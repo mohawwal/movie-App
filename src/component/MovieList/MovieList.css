@@ -1,0 +1,10 @@
+.movie__list {
+  margin-top: 10%;
+}
+
+.movie__title {
+  border-bottom: 2px solid rgb(195, 0, 0);
+  width: 30%;
+  text-align: right;
+  border-radius: 50px;
+}
