@@ -21,7 +21,7 @@ export default function Header() {
 
           {show && (
             <div className="headerNav flex">
-              <div onClick={() => setShow(false)}>
+              <div className="closeBurger" onClick={() => setShow(false)}>
                 <GiHamburger className="icon" />
               </div>
               <Link to="/" className="header-category">

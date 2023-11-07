@@ -70,12 +70,17 @@ export default function Movie() {
           </div>
           <div className="movieText">
             <h2>{currentMovieDetail.original_title}</h2>
-            <p>{currentMovieDetail.overview}</p>
-            <p>Release Date: {currentMovieDetail.release_date}</p>
+            <p>{currentMovieDetail.release_date}</p>
             <span>
               <h4>Genre</h4>
+              <span>
+                {currentMovieDetail.genres.map((genre) => (
+                  <p key={genre.id}>{" " + genre.name}</p>
+                ))}
+              </span>
             </span>
             <p>Rating: {currentMovieDetail.vote_average}</p>
+            <p>{currentMovieDetail.overview}</p>
           </div>
         </div>
       ) : (

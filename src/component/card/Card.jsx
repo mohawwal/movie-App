@@ -23,6 +23,7 @@ export default function Card({ movie }) {
         </div>
       ) : (
         <Link
+          className="cardItems"
           to={`/movie/${movie.id}`}
           style={{ textDecoration: "none", color: "white" }}
         >
