@@ -1,17 +1,33 @@
+.HomeSpace {
+  height: 100vh;
+}
+
+.poster__title {
+  font-size: 2rem;
+  font-weight: 800;
+  background-image: url(/Images/bgImg.jpg);
+  background-repeat: repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+a {
+  color: white;
+}
+
 .control-dots {
   opacity: 10%;
 }
 
-.movieDetails {
-  width: 100%;
-  height: 50vh;
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.posterImg {
-  position: relative;
-  z-index: 10;
-  height: 55vh;
-  background-color: rgb(70, 0, 0);
+.releaseDate {
+  padding-top: 10px;
 }
 
 .movieDetails::after {
@@ -20,7 +36,6 @@
   top: 0;
   right: 0;
   width: 100%;
-  z-index: 20;
   height: 100%;
   background-image: linear-gradient(
     to right bottom,
@@ -30,75 +45,81 @@
     rgba(0, 0, 0, 0.4),
     rgba(0, 0, 0, 0)
   );
+  z-index: 20;
+}
+
+.posterImg {
+  height: 100vh;
 }
 
 .posterImg img {
-  height: 100%;
   object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.rating {
+  opacity: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.rating span {
+  opacity: 80%;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .posterImage__overlay {
-  margin-top: 30%;
-  max-width: 90%;
+  position: relative;
+  padding: 10%;
+  padding-right: 10%;
+  text-align: start;
   position: absolute;
-  z-index: 30;
+  z-index: 40;
+  top: 0;
+  margin-top: 12vh;
+}
+
+.play {
+  position: absolute;
   top: 0;
   left: 0;
-  padding: 10%;
-  color: white;
-  text-align: left;
-  display: flex;
-  gap: 10px;
-  flex-direction: column;
-}
-
-.poster__title {
-  font-size: 1.7rem;
-  font-weight: 700;
-  background-image: url(/Images/bgImg.jpg);
-  background-repeat: repeat;
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.vote_average {
-  width: 40px;
-  height: 40px;
-  background-color: red;
-  opacity: 70%;
-  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0%;
+  z-index: 0;
 }
-.vote_average span {
-  background-color: white;
+
+.play-icon {
+  font-size: 3.5rem;
+  color: rgb(255, 0, 0);
+}
+
+.play:hover,
+.play:focus {
+  opacity: 100%;
+}
+
+.HomeCard img {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 27px;
-  height: 27px;
-  border-radius: 50%;
-}
-
-.posterImage__runtime {
-  width: 60%;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.playMovie {
-  margin: 8% 0;
-}
-
-.playMovie {
-  background-color: brown;
-  padding: 5%;
-  display: flex;
   flex-direction: row;
   gap: 10px;
-  border-radius: 10px;
+}
+
+.HomeCard img {
+  width: 40%;
 }

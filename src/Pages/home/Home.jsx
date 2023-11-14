@@ -1,29 +1,28 @@
-import "./Home.css";
-import { useEffect, useState } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from "react-responsive-carousel";
-import { Link } from "react-router-dom";
-import { AiOutlineStar, AiFillPlayCircle } from "react-icons/ai";
-import MovieList from "../../component/MovieList/MovieList";
+import "./Home.css";
 import Header from "../../component/header/Header";
+import MovieList from "../../component/MovieList/MovieList";
+// import MovieType from "./movieTypes/movieType";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { Carousel } from "react-responsive-carousel";
+import { BsFillPlayCircleFill } from "react-icons/bs";
 
 export default function Home() {
   const [popularMovies, setPopularMovies] = useState([]);
-  // const [mobile, setMobile] = useState(true);
+
   useEffect(() => {
     fetch(
       `https://api.themoviedb.org/3/movie/popular?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US`
     )
-      .then((res) => res.json())
+      .then((resp) => resp.json())
       .then((data) => {
-        setPopularMovies(data.results);
-        console.log(data.results);
+        setPopularMovies(data.results), console.log(data.results);
       });
   }, []);
-
   return (
-    <>
-      <div className="Head">
+    <div className="HomeSpace">
+      <div>
         <Header />
       </div>
       <div className="poster">
@@ -36,8 +35,8 @@ export default function Home() {
         >
           {popularMovies.map((movie) => (
             <Link
-              to={`/movie/${movie.id}`}
               key={movie.id}
+              to={`movie/${movie.id}`}
               className="movieDetails"
             >
               <div className="posterImg">
@@ -45,46 +44,47 @@ export default function Home() {
                   src={`https://image.tmdb.org/t/p/original${
                     movie && movie.backdrop_path
                   }`}
-                  alt=""
+                  alt="Movies"
                 />
               </div>
-
               <div className="posterImage__overlay">
-                <div className="poster__title">
-                  {movie ? movie.original_title : ""}
-                </div>
-                <div className="posterImage__runtime">
-                  <span>{movie ? movie.release_date : ""} </span>
-                  <span className="posterImage__rating">
-                    {movie ? movie.vote_average : ""}
-                  </span>
-                  <span>
-                    <AiOutlineStar /> {""}
-                  </span>
-                  {/* <div className="vote_average">
-                    <span>{movie.vote_average}</span>
-                  </div> */}
-                </div>
-                <div className="posterImage__description">
-                  <div className="posterImage__description">
-                    {movie
-                      ? movie.overview.slice(0, 90) +
-                        (movie.overview.length > 90 ? "..." : "")
-                      : ""}
+                <div>
+                  <div className="title">
+                    <h1 className="poster__title">
+                      {movie ? movie.original_title : " "}
+                    </h1>
                   </div>
+                  <p className="releaseDate">
+                    {movie ? movie.release_date : " "}
+                  </p>
+                  <div className="rating">
+                    <span>{movie ? movie.vote_average : " "}</span>
+                    <span>
+                      {movie ? movie.original_language.toUpperCase() : " "}
+                    </span>
+                  </div>
+                  <p className="posterImage__description">
+                    {movie ? movie.overview : " "}
+                    {/* {movie ? movie.overview.slice(0, 100) + "..." : " "} */}
+                  </p>
                 </div>
-                <div className="flex play">
-                  <span className="playMovie">
-                    <AiFillPlayCircle />
-                    <p>PLAY NOW</p>
-                  </span>
+                <div className="play">
+                  <a
+                    className="play-icon"
+                    href={`https://www.youtube.com/results?search_query=${encodeURIComponent(
+                      movie.title
+                    )}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <BsFillPlayCircleFill />
+                  </a>
                 </div>
               </div>
             </Link>
           ))}
         </Carousel>
-        <MovieList />
       </div>
-    </>
+    </div>
   );
 }

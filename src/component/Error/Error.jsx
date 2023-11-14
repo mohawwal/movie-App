@@ -3,7 +3,8 @@ import "./Error.css";
 export default function Error() {
   return (
     <div className="error">
-      <img src="/public/Images/404.gif" alt="Error" />
+      <h1>404</h1>
+      <h3>Error</h3>
     </div>
   );
 }

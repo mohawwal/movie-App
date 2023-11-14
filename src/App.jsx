@@ -1,11 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // import Header from "./component/header/Header";
-import "./App.css";
 import Home from "./Pages/home/Home";
+import Movie from "./component/MovieDetails/Movie";
+import "./App.css";
 import MovieList from "./component/MovieList/MovieList";
-import Movie from "./Pages/MovieDetails/Movie";
 import Error from "./component/Error/Error";
-
 function App() {
   return (
     <>

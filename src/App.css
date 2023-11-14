@@ -5,11 +5,7 @@
 }
 
 body {
-  background: rgb(37, 37, 37);
+  background: rgb(26, 26, 26);
   color: white;
   font-family: "poppin", sans-serif;
-}
-
-.Head {
-  position: relative;
 }
