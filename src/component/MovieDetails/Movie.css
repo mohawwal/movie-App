@@ -1,98 +1,3 @@
-/* .movie {
-  position: relative;
-  display: block;
-}
-
-.coverImg {
-  background-color: rgb(255, 255, 255);
-  width: 100%;
-  height: 30vh;
-}
-
-.coverImg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-.sideMovie {
-  position: relative;
-  z-index: 30;
-}
-
-.sidePlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: transparent;
-  width: 100%;
-  height: 100%;
-  opacity: 0%;
-  z-index: 50;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.sidePlay:hover,
-.sidePlay:focus {
-  opacity: 100%;
-}
-
-.moviePic {
-  position: absolute;
-  top: 0;
-  margin: 25% 20%;
-  width: 60%;
-  height: 35vh;
-  z-index: 100;
-}
-
-.moviePic img {
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-}
-
-.movieText {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 2%;
-  padding-right: 10%;
-  font-size: 1.1rem;
-}
-
-.movieText h1 {
-  font-size: 2.3rem;
-  font-weight: 900;
-  text-shadow: 1px 2px 1px rgb(29, 47, 2);
-}
-
-.movieText span {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.tagline {
-  color: yellow;
-}
-
-.loading {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 40vh;
-}
-
-.loading img {
-  width: 3rem;
-} */
-
 .loading img {
   width: 2.3rem;
 }
@@ -103,11 +8,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 40vh;
+  margin-top: 25vh;
 }
 
 .movieDet {
-  height: 40vh;
+  height: 25vh;
   background-color: wheat;
 }
 
@@ -117,7 +22,7 @@
   left: 0;
   content: "";
   width: 100%;
-  height: 40vh;
+  height: 25vh;
   background-image: linear-gradient(
     to right bottom,
     rgba(0, 0, 0, 0.9),
@@ -141,7 +46,7 @@
   justify-content: space-around;
   position: absolute;
   top: 0;
-  margin-top: 25vh;
+  margin-top: 10vh;
   left: 0;
   z-index: 50;
 }
