@@ -8,3 +8,8 @@
 .movie__list {
   padding: 5%;
 }
+
+.movie__list h2 {
+  width: 100%;
+  text-align: right;
+}

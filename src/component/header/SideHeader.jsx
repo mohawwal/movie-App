@@ -15,7 +15,7 @@ export default function Header() {
             <BiArrowBack className="head-icons icons side-icon" />
           </Link>
           <RxHamburgerMenu
-            className="head-icons icons side-icon"
+            className="head-icons icons side-icon menuSideIcon"
             onClick={() => setNavOpen(!navOpen)}
           />
         </div>

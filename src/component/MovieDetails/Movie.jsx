@@ -2,7 +2,6 @@ import "./Movie.css";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import SideHeader from "../../component/header/SideHeader";
-import { BsFillPlayCircleFill } from "react-icons/bs";
 import { AiFillHeart } from "react-icons/ai";
 
 export default function Movie() {

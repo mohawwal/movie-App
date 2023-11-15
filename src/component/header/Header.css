@@ -54,7 +54,7 @@ a {
   width: 100%;
   top: 0;
   height: 100vh;
-  z-index: 60;
+  z-index: 80;
 }
 
 .nav-links .cancel,
@@ -70,6 +70,10 @@ a {
 
 .sameNav {
   height: 100vh;
+}
+
+.menuSideIcon {
+  opacity: 0%;
 }
 
 /* @media screen and (min-width: 300px) {
