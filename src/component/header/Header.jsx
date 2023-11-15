@@ -1,4 +1,3 @@
-
 import "./Header.css";
 import { Link } from "react-router-dom";
 import { MdCancel } from "react-icons/md";
@@ -25,7 +24,7 @@ export default function Header() {
           />
         </div>
         {profile && (
-          <div className="nav-links flex">
+          <div className="nav-links flex sameNav">
             <div className="cancel" onClick={() => setProfile(false)}>
               <MdCancel />
             </div>
@@ -65,7 +64,7 @@ export default function Header() {
         )}
 
         {navOpen && (
-          <div className="header-nav flex">
+          <div className="header-nav flex sameNav">
             <div className="cancel" onClick={() => setNavOpen(false)}>
               <MdCancel />
             </div>

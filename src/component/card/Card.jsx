@@ -2,16 +2,10 @@ import { Link } from "react-router-dom";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "./Card.css";
 import { useEffect, useState } from "react";
-import { AiFillHeart } from "react-icons/ai";
 
 export default function Card({ movie }) {
   const [isLoading, setIsLoading] = useState(true);
   const [favMovies, setFavMovies] = useState([]);
-  const [like, setLike] = useState(true);
-
-  function flipLove() {
-    setLike(!like);
-  }
 
   useEffect(() => {
     setTimeout(() => {
@@ -41,9 +35,6 @@ export default function Card({ movie }) {
       <div className="cardSection">
         <div className="cards__title">
           <h3>{movie && movie.original_title}</h3>
-        </div>
-        <div className={like ? "like" : "love"}>
-          {<AiFillHeart onClick={flipLove} className="heart" />}
         </div>
       </div>
     </div>

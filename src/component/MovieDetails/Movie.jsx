@@ -1,13 +1,18 @@
-
 import "./Movie.css";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import SideHeader from "../../component/header/SideHeader";
 import { BsFillPlayCircleFill } from "react-icons/bs";
+import { AiFillHeart } from "react-icons/ai";
 
 export default function Movie() {
   const [currentMovieDetail, setMovie] = useState(null);
   const { id } = useParams();
+  const [like, setLike] = useState(true);
+
+  function flipLove() {
+    setLike(!like);
+  }
 
   useEffect(() => {
     getData();
@@ -26,17 +31,40 @@ export default function Movie() {
   return (
     <div>
       <div>
-        <SideHeader />
-      </div>
-      <div>
         {currentMovieDetail ? (
           <div className="movie">
+            <div>
+              <SideHeader />
+            </div>
             <div className="sideMovie">
-              <div className="coverImg movieDetails">
-                <img
-                  src={`https://image.tmdb.org/t/p/original${currentMovieDetail.backdrop_path}`}
-                  alt="img"
-                />
+              <div className="coverImg">
+                <div className="movieDet">
+                  <img
+                    src={`https://image.tmdb.org/t/p/original${currentMovieDetail.backdrop_path}`}
+                    alt="img"
+                  />
+                </div>
+
+                <div className="smallImg flex">
+                  <img
+                    src={`https://image.tmdb.org/t/p/original${currentMovieDetail.poster_path}`}
+                    alt=""
+                  />
+                  <div>
+                    <p>
+                      {currentMovieDetail
+                        ? currentMovieDetail.vote_average + " / 10"
+                        : " "}
+                    </p>
+                    <h2>{currentMovieDetail.original_title}</h2>
+                    <p className="tagline">
+                      {currentMovieDetail ? currentMovieDetail.tagline : ""}
+                    </p>
+                    <div className={like ? "like" : "love"}>
+                      {<AiFillHeart onClick={flipLove} className="heart" />}
+                    </div>
+                  </div>
+                </div>
               </div>
               <div className="sidePlay">
                 <a
@@ -45,16 +73,13 @@ export default function Movie() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <BsFillPlayCircleFill />
+                  Play Now
                 </a>
               </div>
             </div>
 
             <div className="movieText">
-              <h1>{currentMovieDetail.original_title}</h1>
-              <p className="tagline">
-                {currentMovieDetail ? currentMovieDetail.tagline : ""}
-              </p>
+              <p>{currentMovieDetail.overview}</p>
               <span className="release">
                 <h4>Release</h4>
                 <p>{currentMovieDetail.release_date}</p>
@@ -73,8 +98,6 @@ export default function Movie() {
                   <p key={movieCountry.id}>{movieCountry.iso_3166_1}</p>
                 ))}
               </span>
-              <p>Rating: {currentMovieDetail.vote_average}</p>
-              <p>{currentMovieDetail.overview}</p>
             </div>
           </div>
         ) : (

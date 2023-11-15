@@ -1,4 +1,4 @@
-.movie {
+/* .movie {
   position: relative;
   display: block;
 }
@@ -91,4 +91,103 @@
 
 .loading img {
   width: 3rem;
+} */
+
+.loading img {
+  width: 2.3rem;
+}
+
+.loading {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40vh;
+}
+
+.movieDet {
+  height: 40vh;
+  background-color: wheat;
+}
+
+.movieDet::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 40vh;
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0)
+  );
+  z-index: 40;
+}
+
+.movieDet img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.smallImg {
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  position: absolute;
+  top: 0;
+  margin-top: 25vh;
+  left: 0;
+  z-index: 50;
+}
+
+.smallImg img {
+  width: 35%;
+  border-radius: 15px;
+}
+
+.smallImg div {
+  width: 50%;
+}
+.sidePlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  margin-top: 30%;
+  margin-bottom: 5%;
+}
+
+.sidePlay a {
+  font-size: 1.3rem;
+  color: white;
+  background-color: rgb(234, 45, 45);
+  padding: 5px 35px;
+  border-radius: 30px;
+}
+
+.like,
+.love {
+  width: 100%;
+  margin-left: 50%;
+  text-align: right;
+}
+
+.movieText {
+  padding: 5%;
+}
+
+.release {
+  margin-top: 20px;
+}
+
+.movieText span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
