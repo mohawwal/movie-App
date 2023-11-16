@@ -1,8 +1,4 @@
-.HomeSpace {
-  height: 100vh;
-}
-
-.poster__title {
+/* .poster__title {
   font-size: 2rem;
   font-weight: 800;
   background-image: url(/Images/bgImg.jpg);
@@ -10,15 +6,7 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-a {
-  color: white;
-}
-
-.control-dots {
-  opacity: 10%;
-}
+} 
 
 .rating {
   display: flex;
@@ -30,33 +18,6 @@ a {
   padding-top: 10px;
 }
 
-.movieDetails::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(
-    to right bottom,
-    rgba(0, 0, 0, 0.9),
-    rgba(0, 0, 0, 0.7),
-    rgba(0, 0, 0, 0.5),
-    rgba(0, 0, 0, 0.4),
-    rgba(0, 0, 0, 0)
-  );
-  z-index: 20;
-}
-
-.posterImg {
-  height: 100vh;
-}
-
-.posterImg img {
-  object-fit: cover;
-  height: 100%;
-  width: 100%;
-}
 
 .rating {
   opacity: 80%;
@@ -122,4 +83,169 @@ a {
 
 .HomeCard img {
   width: 40%;
+}
+
+
+*/
+
+.HomeSpace {
+  height: 100vh;
+}
+
+a {
+  color: white;
+}
+
+.control-dots {
+  opacity: 0.2;
+  width: 0.5px;
+}
+
+.movieDetails::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0)
+  );
+  z-index: 20;
+}
+
+.posterMovieImg {
+  width: 50%;
+  height: 55vh;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  z-index: 70;
+}
+
+.posterMovieImg img {
+  width: 100%;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.posterImg {
+  height: 55vh;
+  box-shadow: 0 20px 10px rgba(0, 0, 0, 0.1);
+}
+
+.posterImg img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(to bottom, rgba(250, 248, 248, 0), white);
+}
+
+.custom-carousel .control-arrow:hover {
+  opacity: 0.5;
+}
+
+.footer {
+  background-color: black;
+  height: 5vh;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  justify-content: space-around;
+  z-index: 1000;
+}
+
+.footIcons {
+  font-size: 1.6rem;
+  border-radius: 1px solid rgb(116, 17, 17);
+}
+
+.otherCat {
+  padding: 5% 0 10% 5%;
+}
+
+.popularMovies {
+  margin-top: 20px;
+  overflow: scroll;
+  height: 25vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.popularMovies::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.popularNet {
+  width: 100%;
+}
+
+.popularNet img {
+  width: 300px;
+  height: auto;
+  border-radius: 2px solid yellow;
+}
+
+.topic {
+  justify-content: space-around;
+}
+
+.stars {
+  color: red;
+}
+
+/* profile */
+.profile {
+  width: 80%;
+  margin: auto;
+  margin-top: 20%;
+}
+
+.socialMedia {
+  display: flex;
+  align-items: center;
+  gap: 10%;
+  justify-content: center;
+}
+
+.socialMedia span {
+  background-color: rgb(101, 101, 101);
+  width: 40px;
+  display: flex;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.skills {
+  margin-top: 10vh;
+  text-align: center;
+}
+
+.skillsIcon {
+  margin-top: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-direction: column;
+  font-size: 4rem;
+}
+
+.skillsIcon div {
+  gap: 30px;
+  display: flex;
+  align-items: center;
 }

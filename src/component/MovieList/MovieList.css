@@ -1,15 +1,18 @@
 .list__cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  grid-gap: 5px;
   flex-direction: row;
-  margin-top: 5vh;
-}
-
-.movie__list {
-  padding: 5%;
+  margin-top: 3vh;
+  padding: 2%;
 }
 
 .movie__list h2 {
-  width: 100%;
+  font-size: 1.5rem;
   text-align: right;
+  padding: 2% 10%;
+}
+
+.cards__img {
+  padding: 3%;
 }

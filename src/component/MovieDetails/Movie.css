@@ -1,19 +1,50 @@
-.loading img {
-  width: 2.3rem;
+.sideMovie {
+  height: auto;
+  margin-bottom: 10vh;
 }
 
-.loading {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 25vh;
+.arrow {
+  width: 30px;
+  height: 30px;
+  border: 1px solid;
+  border-radius: 50%;
+  animation: bounceAnimation 3s infinite;
+  padding: 5px;
+}
+
+.arrow.rotated {
+  transform: rotate(180deg);
+}
+
+/* Define the bounce animation */
+@keyframes bounceAnimation {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+.arrow {
+  animation-delay: 3s;
+}
+
+.arrowFlip {
+  padding: 5%;
+}
+
+.overview {
+  overflow-y: auto;
+  max-width: 50vh;
 }
 
 .movieDet {
-  height: 25vh;
-  background-color: wheat;
+  height: 45vh;
+  position: relative;
+  border-end-end-radius: 8%;
+  border-end-start-radius: 8%;
 }
 
 .movieDet::before {
@@ -22,7 +53,7 @@
   left: 0;
   content: "";
   width: 100%;
-  height: 25vh;
+  height: 45vh;
   background-image: linear-gradient(
     to right bottom,
     rgba(0, 0, 0, 0.9),
@@ -38,61 +69,105 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
+  border-end-end-radius: 8%;
+  border-end-start-radius: 8%;
 }
 
-.smallImg {
-  flex-direction: row;
+.label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
-  justify-content: space-around;
+  padding: 3%;
+  font-size: 1rem;
+}
+
+.label h3 {
+  color: red;
+  font-size: 1.5rem;
+}
+.label a {
+  font-size: 1.7rem;
+}
+
+.movieLabel {
   position: absolute;
   top: 0;
-  margin-top: 10vh;
-  left: 0;
-  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 80;
+  width: 100%;
+  height: 48vh;
 }
 
-.smallImg img {
-  width: 35%;
-  border-radius: 15px;
+.playMov {
+  font-size: 3rem;
+  color: rgb(255, 255, 255);
 }
 
-.smallImg div {
-  width: 50%;
+.NextSection {
+  margin-top: 10%;
 }
-.sidePlay {
+
+.nextText {
+  width: 70%;
+}
+
+.nextTitle {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.nextTitle h2 {
+  text-align: center;
+}
+
+.nextTitle .nextIcon {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 10px;
-  margin-top: 30%;
-  margin-bottom: 5%;
+  width: 5.5rem;
+  border-radius: 50%;
 }
 
-.sidePlay a {
-  font-size: 1.3rem;
-  color: white;
-  background-color: rgb(234, 45, 45);
-  padding: 5px 35px;
-  border-radius: 30px;
+.icons {
+  font-size: 1.7rem;
 }
 
-.like,
-.love {
-  width: 100%;
-  margin-left: 50%;
-  text-align: right;
+.icons.add {
+  font-size: 2.4rem;
 }
 
-.movieText {
-  padding: 5%;
+.secondText {
+  display: flex;
+  padding: 2% 5%;
+  text-align: center;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.release {
-  margin-top: 20px;
-}
-
-.movieText span {
+.secondText span {
   display: flex;
   align-items: center;
+  flex-direction: row;
   gap: 10px;
+  justify-content: center;
+}
+
+.secondStars {
+  font-size: 1.2rem;
+  color: yellow;
+}
+
+.secondDetails {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5%;
 }

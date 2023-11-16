@@ -1,12 +1,13 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "./Home.css";
 import Header from "../../component/header/Header";
-import MovieList from "../../component/MovieList/MovieList";
+// import MovieList from "../../component/MovieList/MovieList";
 // import MovieType from "./movieTypes/movieType";
+// import Footer from "./footer";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Carousel } from "react-responsive-carousel";
-import { BsFillPlayCircleFill } from "react-icons/bs";
+import { FaStar } from "react-icons/fa";
 
 export default function Home() {
   const [popularMovies, setPopularMovies] = useState([]);
@@ -20,6 +21,7 @@ export default function Home() {
         setPopularMovies(data.results), console.log(data.results);
       });
   }, []);
+
   return (
     <div className="HomeSpace">
       <div>
@@ -32,58 +34,58 @@ export default function Home() {
           transitionTime={3}
           infiniteLoop={true}
           showStatus={false}
+          className="custom-carousel"
         >
           {popularMovies.map((movie) => (
-            <Link
-              key={movie.id}
-              to={`movie/${movie.id}`}
-              className="movieDetails"
-            >
-              <div className="posterImg">
-                <img
-                  src={`https://image.tmdb.org/t/p/original${
-                    movie && movie.backdrop_path
-                  }`}
-                  alt="Movies"
-                />
-              </div>
-              <div className="posterImage__overlay">
-                <div>
-                  <div className="title">
-                    <h1 className="poster__title">
-                      {movie ? movie.original_title : " "}
-                    </h1>
+            <Link key={movie.id} to={`movie/${movie.id}`}>
+              <div className="HomeMovieDetails">
+                <div className="movieDetails">
+                  <div className="posterImg">
+                    <img
+                      src={`https://image.tmdb.org/t/p/original${
+                        movie && movie.backdrop_path
+                      }`}
+                      alt="Movies"
+                    />
                   </div>
-                  <p className="releaseDate">
-                    {movie ? movie.release_date : " "}
-                  </p>
-                  <div className="rating">
-                    <span>{movie ? movie.vote_average : " "}</span>
-                    <span>
-                      {movie ? movie.original_language.toUpperCase() : " "}
-                    </span>
-                  </div>
-                  <p className="posterImage__description">
-                    {movie ? movie.overview : " "}
-                    {/* {movie ? movie.overview.slice(0, 100) + "..." : " "} */}
-                  </p>
                 </div>
-                <div className="play">
-                  <a
-                    className="play-icon"
-                    href={`https://www.youtube.com/results?search_query=${encodeURIComponent(
-                      movie.title
-                    )}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <BsFillPlayCircleFill />
-                  </a>
+                <div className="posterMovieImg">
+                  <img
+                    src={`https://image.tmdb.org/t/p/original${
+                      movie && movie.poster_path
+                    }`}
+                    alt=""
+                  />
                 </div>
               </div>
             </Link>
           ))}
         </Carousel>
+      </div>
+      <div className="otherCat">
+        <h3>Popular on Netflix</h3>
+        <div className="popularMovies">
+          {popularMovies.map((movie) => (
+            <Link key={movie.id} to={`movie/${movie.id}`}>
+              <div key={movie.id} className="popularNet">
+                <img
+                  src={`https://image.tmdb.org/t/p/original${
+                    movie && movie.backdrop_path
+                  }`}
+                  alt=""
+                />
+                <div className="topic flex">
+                  <h4>{movie ? movie.title : " "}</h4>
+                  <div className="stars">
+                    <FaStar />
+                    <FaStar />
+                    <FaStar />
+                  </div>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );
